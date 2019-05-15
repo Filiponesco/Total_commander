@@ -10,6 +10,7 @@ namespace lab_2_A
     {
         IViewMiniTCPanel left { get; set; }
         IViewMiniTCPanel right{ get; set; }
+        void Message(string s);
 
         event Action Copy;
 

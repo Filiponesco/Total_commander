@@ -29,10 +29,14 @@ namespace lab_2_A
 
         public event Action Copy;
 
+        public void Message(string s)
+        {
+            MessageBox.Show(s);
+        }
+
         private void btnCopy_Click(object sender, EventArgs e)
         {
             Copy();
-            MessageBox.Show("Skopiowano");
         }
     }
 }

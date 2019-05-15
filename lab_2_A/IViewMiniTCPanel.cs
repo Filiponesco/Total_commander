@@ -17,7 +17,10 @@ namespace lab_2_A
         string SelectedFolder { get;}
 
         string SelectedFile { get; }
+
         string[] Contents { set; }
+
+        void Error(string e);
 
         event Action SelectDrive;
         event Action PathChanged;

@@ -26,9 +26,16 @@ namespace lab_2_A
         }
         private void Path_Changed()
         {
-            viewTC.CurrentPath = viewTC.SelectedFolder;
-            if(model.ShowFiles(viewTC.CurrentPath) != null)
-                viewTC.Contents = model.ShowFiles(viewTC.CurrentPath);
+            try
+            {
+                viewTC.CurrentPath = viewTC.SelectedFolder;
+                if (model.ShowFiles(viewTC.CurrentPath) != null)
+                    viewTC.Contents = model.ShowFiles(viewTC.CurrentPath);
+            }
+            catch(Exception e)
+            {
+                viewTC.Error(e.Message);
+            }
         }
     }
 }

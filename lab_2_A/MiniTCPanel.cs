@@ -29,7 +29,8 @@ namespace lab_2_A
         }
 
         public string[] Drives {
-            set {
+            set
+            {
                 foreach (var d in value)
                 {
                     comboBox1.Items.Add(d);
@@ -55,7 +56,6 @@ namespace lab_2_A
         {
             get
             {
-                ///
                 return listBox1.SelectedItem.ToString();
             }
         }
@@ -78,7 +78,7 @@ namespace lab_2_A
         {
             get
             {
-                ////Warunek sprawdzajacy czy to plik, anie folder
+                ////Warunek sprawdzajacy czy to plik, a nie folder
                 return listBox1.SelectedItem.ToString();
             }
         }
@@ -101,6 +101,10 @@ namespace lab_2_A
         private void listBox1_DoubleClick(object sender, EventArgs e)
         {
             PathChanged();
+        }
+        void IViewMiniTCPanel.Error(string e)
+        {
+            errorProvider1.SetError(textBox1, e);
         }
     }
 }

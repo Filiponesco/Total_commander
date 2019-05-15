@@ -23,7 +23,16 @@ namespace lab_2_A
         }
         private void View_Copy()
         {
-            model.Model_Copy(view.left.SelectedFile, view.right.CurrentPath);
+            try
+            {
+                model.Model_Copy(view.left.SelectedFile, view.right.CurrentPath);
+                view.Message("Skopiowano poprawnie");
+            }
+            catch(Exception e)
+            {
+                view.Message(e.Message);
+            }
+            
         }
     }
 }
