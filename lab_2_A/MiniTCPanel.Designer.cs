@@ -33,6 +33,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,10 +68,21 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(3, 28);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(60, 23);
+            this.btnBack.TabIndex = 3;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // MiniTCPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
@@ -89,5 +101,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -88,6 +88,7 @@ namespace lab_2_A
         #region Events
         public event Action SelectDrive;
         public event Action PathChanged;
+        public event Action PathBack;
         #endregion
         public MiniTCPanel()
         {
@@ -105,6 +106,11 @@ namespace lab_2_A
         void IViewMiniTCPanel.Error(string e)
         {
             errorProvider1.SetError(textBox1, e);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            PathBack();
         }
     }
 }

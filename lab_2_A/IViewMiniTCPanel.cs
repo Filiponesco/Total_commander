@@ -24,5 +24,6 @@ namespace lab_2_A
 
         event Action SelectDrive;
         event Action PathChanged;
+        event Action PathBack;
     }
 }

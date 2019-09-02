@@ -26,5 +26,10 @@ namespace lab_2_A
 
             File.Copy(from, destFile);
         }
+        public string Model_Back(string path)
+        {
+            //string path = @"C:\Folder1\Folder2\Folder3\Folder4";
+            return Path.GetFullPath(Path.Combine(path, @"..\"));
+        }
     }
 }

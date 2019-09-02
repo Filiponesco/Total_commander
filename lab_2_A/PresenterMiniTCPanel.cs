@@ -17,6 +17,7 @@ namespace lab_2_A
             this.model = model;
             this.viewTC.SelectDrive += Select_Drive;
             this.viewTC.PathChanged += Path_Changed;
+            this.viewTC.PathBack += Path_Back;
         }
         private void Select_Drive()
         {
@@ -31,6 +32,22 @@ namespace lab_2_A
                 viewTC.CurrentPath = viewTC.SelectedFolder;
                 if (model.ShowFiles(viewTC.CurrentPath) != null)
                     viewTC.Contents = model.ShowFiles(viewTC.CurrentPath);
+            }
+            catch(Exception e)
+            {
+                viewTC.Error(e.Message);
+            }
+        }
+        private void Path_Back()
+        {
+            try
+            {      
+                if (model.ShowFiles(viewTC.CurrentPath) != null)
+                {
+                    viewTC.CurrentPath = model.Model_Back(viewTC.CurrentPath);
+                    viewTC.Contents = model.ShowFiles(viewTC.CurrentPath);
+                }
+
             }
             catch(Exception e)
             {

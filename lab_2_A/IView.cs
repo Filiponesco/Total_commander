@@ -13,6 +13,5 @@ namespace lab_2_A
         void Message(string s);
 
         event Action Copy;
-
     }
 }
